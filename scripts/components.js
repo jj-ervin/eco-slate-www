@@ -31,8 +31,10 @@ const TopNav = () => {
   const nav = mk('header', 'top-nav');
   const brand = mk('div', 'brand');
   const mark = mk('div', 'brand-mark');
+  const markBird = mk('div', 'brand-mark-bird');
   const name = mk('div', 'brand-copy');
   name.innerHTML = '<span>O</span>sprey';
+  mark.append(markBird);
   brand.append(mark, name);
 
   const links = mk('nav', 'nav-links', '');
@@ -88,9 +90,17 @@ const HeroCenteredEmblem = () => {
   const card = mk('div', 'hero-emblem-card');
   const halo = mk('div', 'emblem-halo');
   const frame = EmblemFrame();
+  const bird = mk('div', 'emblem-bird');
+  bird.innerHTML = `
+    <svg viewBox="0 0 160 100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 60 C38 36 65 20 88 28 C95 12 124 14 148 36 C142 44 128 40 116 36 C103 32 90 38 76 46 C72 52 64 60 52 62 C42 64 28 68 12 60 Z" fill="currentColor" />
+      <path d="M30 52 C45 42 52 24 68 30 C78 14 108 18 134 38 C126 48 108 42 96 36 C84 30 70 34 58 42 C54 48 46 56 34 58 C28 60 22 62 18 56 Z" fill="rgba(255,255,255,0.28)" />
+      <circle cx="46" cy="34" r="5" fill="#031a2a" />
+    </svg>
+  `;
   const floating = mk('div', 'hero-floating-chip');
   floating.innerHTML = '<strong>98.7</strong><span>Trust score</span>';
-  card.append(halo, frame, floating);
+  card.append(halo, frame, bird, floating);
   return card;
 };
 

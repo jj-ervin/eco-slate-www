@@ -76,11 +76,48 @@ svg {
 }
 
 .brand-mark {
+  position: relative;
   width: 44px;
   height: 44px;
   border-radius: 18px;
   background: radial-gradient(circle at 30% 30%, rgba(255, 221, 141, 0.28), transparent 42%), linear-gradient(180deg, var(--sky500), var(--navy700));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+
+.brand-mark-bird {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.92), rgba(255,255,255,0.18));
+}
+
+.brand-mark-bird::before,
+.brand-mark-bird::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+}
+
+.brand-mark-bird::before {
+  top: 4px;
+  left: 5px;
+  width: 10px;
+  height: 4px;
+  transform: rotate(20deg);
+}
+
+.brand-mark-bird::after {
+  top: 10px;
+  left: 4px;
+  width: 12px;
+  height: 6px;
+  background: rgba(255,255,255,0.24);
+  transform: rotate(-20deg);
 }
 
 .brand-copy {
@@ -88,6 +125,28 @@ svg {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+.emblem-bird {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 140px;
+  height: 84px;
+  transform: translate(-50%, -10%);
+  z-index: 3;
+}
+
+.emblem-bird svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: rgba(255,255,255,0.92);
+}
+
+.emblem-bird svg path {
+  stroke: none;
+}
+
 
 .brand-copy span {
   color: var(--gold500);

@@ -57,19 +57,13 @@ svg {
   inset: 0;
   pointer-events: none;
   background:
-    repeating-linear-gradient(0deg, transparent, transparent 84px, rgba(107, 247, 255, 0.08) 85px, rgba(107, 247, 255, 0.08) 86px),
-    repeating-linear-gradient(90deg, transparent, transparent 84px, rgba(255, 112, 224, 0.06) 85px, rgba(255, 112, 224, 0.06) 86px),
-    radial-gradient(circle at 20% 10%, rgba(107, 247, 255, 0.16), transparent 18%),
-    radial-gradient(circle at 80% 16%, rgba(255, 112, 224, 0.08), transparent 20%);
-  opacity: 0.28;
+    repeating-linear-gradient(0deg, transparent, transparent 84px, rgba(107, 247, 255, 0.06) 85px, rgba(107, 247, 255, 0.06) 86px),
+    repeating-linear-gradient(90deg, transparent, transparent 84px, rgba(255, 112, 224, 0.04) 85px, rgba(255, 112, 224, 0.04) 86px),
+    radial-gradient(circle at 20% 10%, rgba(107, 247, 255, 0.14), transparent 18%),
+    radial-gradient(circle at 80% 16%, rgba(255, 112, 224, 0.06), transparent 20%);
+  opacity: 0.22;
   mix-blend-mode: screen;
-  animation: drift-grid 18s linear infinite;
   z-index: 0;
-}
-
-@keyframes drift-grid {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-24px, 24px); }
 }
 
 .top-nav {

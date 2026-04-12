@@ -23,8 +23,8 @@ const hero = SectionWrapper({ id: 'hero', classes: 'hero-section', children: [
     left.className = 'hero-copy';
     left.innerHTML = `
       <p class="eyebrow">Osprey Holding</p>
-      <h1>eco is a cognitive operating environment for thoughtful product ecosystems.</h1>
-      <p class="hero-copy-text">Built by HBL Creative Studios and 20Amp Labs, eco lives under Osprey Holding LLC. It includes Kinjuu, Niji, Agrilogik, and future platforms designed to make financial systems more intuitive, flexible, and human-centered.</p>
+      <h1>eco is a cognitive operating environment in active development.</h1>
+      <p class="hero-copy-text">Built by HBL Creative Studios and 20Amp Labs, eco lives under Osprey Holding LLC. Kinjuu, Niji, Agrilogik, and the broader platform are public work-in-progress projects with docs and downloads arriving soon.</p>
     `;
     const actions = document.createElement('div');
     actions.className = 'hero-actions';
@@ -46,10 +46,18 @@ const page = PageShell([
     LogoCloud({ names: ['Kinjuu', 'Niji', 'Agrilogik', 'eco', 'Osprey'] })
   ]}),
   SectionWrapper({ id: 'access', classes: 'feature-section', children: [
-    SectionIntro({ eyebrow: 'Public hub', title: 'eco-slate.org is the public home for repos, docs, and downloads.', body: 'The site supports open access to apps, components, documentation, and downloads managed by HBL Creative Studios. A companion GitHub repo mirrors the same ecosystem.' })
+    SectionIntro({ eyebrow: 'Public hub', title: 'eco-slate.org is the public landing page for a developing ecosystem.', body: 'The site supports public preview access to apps, components, documentation, and downloads managed by HBL Creative Studios. A companion GitHub repo mirrors the same ecosystem while the work continues.' })
+  ]}),
+  SectionWrapper({ id: 'wip', classes: 'feature-section', children: [
+    SectionIntro({ eyebrow: 'Work in progress', title: 'The eco ecosystem is being built publicly.', body: 'This site is a public preview as the core projects and their documentation are created. Check back as new repos, docs, and downloads are published.' }),
+    FeatureGrid({ features: [
+      { title: 'Platform preview', description: 'A live public landing page for the developing eco ecosystem.', accent: 'aqua', href: 'index.html', linkLabel: 'View preview' },
+      { title: 'Docs coming soon', description: 'Documentation is under active construction and will be published here first.', accent: 'gold', href: 'docs.html', linkLabel: 'Open docs preview' },
+      { title: 'Downloads arriving', description: 'Release assets and downloads are being prepared for public release.', accent: 'wood', href: 'downloads.html', linkLabel: 'Open downloads preview' }
+    ]})
   ]}),
   SectionWrapper({ id: 'ecosystem', classes: 'feature-section', children: [
-    SectionIntro({ eyebrow: 'Ecosystem gateway', title: 'Access docs, downloads, and the public repo from one place.', body: 'This page and the linked downloads/docs pages are the launch points for the eco ecosystem. Use them to reach project resources, public assets, and community-facing documentation.' }),
+    SectionIntro({ eyebrow: 'Ecosystem gateway', title: 'Access docs, downloads, and the public repo from one place.', body: 'This page and the linked downloads/docs pages are the public work-in-progress gateway for eco. They point to preview resources while the ecosystem is built and published.' }),
     FeatureGrid({ features: [
       { title: 'Docs hub', description: 'Navigate component docs, onboarding guidance, and ecosystem reference material.', accent: 'aqua', href: 'docs.html', linkLabel: 'Open docs' },
       { title: 'Downloads portal', description: 'Find release bundles, assets, and public downloads for Kinjuu, Niji, and Agrilogik.', accent: 'gold', href: 'downloads.html', linkLabel: 'Open downloads' },
@@ -57,7 +65,7 @@ const page = PageShell([
     ]})
   ]}),
   SectionWrapper({ id: 'downloads', classes: 'feature-section', children: [
-    SectionIntro({ eyebrow: 'Downloads', title: 'A clear path from public landing page to docs and assets.', body: 'The downloads section connects users directly to project repos, docs, and release bundles for Kinjuu, Niji, Agrilogik, and the larger eco platform.' }),
+    SectionIntro({ eyebrow: 'Downloads', title: 'A clear path from public landing page to docs and assets.', body: 'The downloads section is a preview portal for project repos, early docs, and upcoming release bundles as the eco platform is built.' }),
     FeatureGrid({ features: [
       { title: 'Project downloads', description: 'Direct access to assets and release bundles for core eco projects.', accent: 'aqua', href: 'downloads.html', linkLabel: 'Open downloads' },
       { title: 'Documentation index', description: 'A centralized docs hub for onboarding, components, and ecosystem workflows.', accent: 'gold', href: 'docs.html', linkLabel: 'Open docs' },

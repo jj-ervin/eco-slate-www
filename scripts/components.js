@@ -213,10 +213,10 @@ const LogoCloud = ({ names = [] } = {}) => {
 
 const CTASection = () => {
   const section = mk('section', 'cta-section');
-  section.append(mk('p', 'section-label', 'Launch readiness'));
-  section.append(mk('h2', 'section-heading', 'Bring calm financial intelligence to your coastal product ecosystem.'));
+  section.append(mk('p', 'section-label', 'Public preview'));
+  section.append(mk('h2', 'section-heading', 'Follow the live eco preview as the ecosystem grows.'));
   const actions = mk('div', 'cta-actions');
-  actions.append(PrimaryButton({ label: 'Book a demo', href: '#contact' }), SecondaryButton({ label: 'Explore the platform', href: '#product' }));
+  actions.append(PrimaryButton({ label: 'Open docs preview', href: 'docs.html' }), SecondaryButton({ label: 'Open downloads preview', href: 'downloads.html' }));
   section.append(actions);
   return section;
 };
@@ -226,7 +226,7 @@ const FooterBrand = () => {
   const left = mk('div', 'footer-copy');
   left.innerHTML = '<strong>Osprey Holding LLC</strong> sets the tone for Kinjuu and other coastal fintech experiences.<br>Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY-4.0</a>.';
   const right = mk('div', 'footer-links');
-  right.innerHTML = '<a href="#product">Product</a><a href="#trust">Trust</a><a href="#contact">Contact</a>';
+  right.innerHTML = '<a href="docs.html">Docs</a><a href="downloads.html">Downloads</a><a href="#contact">Contact</a>';
   footer.append(left, right);
   return footer;
 };

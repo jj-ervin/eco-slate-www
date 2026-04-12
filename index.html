@@ -8,20 +8,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <noscript>
-      <div class="no-js-fallback">
-        <div class="fallback-card">
-          <p class="eyebrow">Browser fallback</p>
-          <h1>JavaScript is required for the full site experience.</h1>
-          <p>Use the links below to continue exploring the product from a static page.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#">Home</a>
-            <a class="button button-secondary" href="404.html">404 page</a>
+    <div id="static-fallback" class="static-fallback">
+      <div class="fallback-page">
+        <header class="top-nav fallback-nav">
+          <div class="brand">
+            <div class="brand-mark"></div>
+            <div class="brand-copy"><span>o</span>CRAFT</div>
           </div>
-        </div>
+          <div class="nav-actions fallback-actions">
+            <a class="button button-secondary" href="#trial">Start trial</a>
+          </div>
+        </header>
+        <main class="fallback-main">
+          <p class="eyebrow">Coastal fintech</p>
+          <h1>Product trust with the structure of pilings and the flow of rope.</h1>
+          <p class="hero-copy-text">A premium system designed for modern financial teams. Clear sections, soft horizon gradients, and a calm tone help your product feel secure and intelligent.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#trial">Get started</a>
+            <a class="button button-secondary" href="#insights">Learn more</a>
+          </div>
+        </main>
       </div>
-    </noscript>
+    </div>
+    <div id="app"></div>
     <script type="module" src="scripts/main.js"></script>
   </body>
 </html>

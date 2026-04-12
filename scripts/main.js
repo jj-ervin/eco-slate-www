@@ -74,3 +74,7 @@ const page = PageShell([
 
 const app = document.querySelector('#app');
 app.append(page);
+const staticFallback = document.getElementById('static-fallback');
+if (staticFallback) {
+  staticFallback.remove();
+}

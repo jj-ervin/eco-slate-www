@@ -1,25 +1,13 @@
+@import url("palette.css");
+
 :root {
   color-scheme: dark;
-  --navy900: #031a2a;
-  --navy700: #0f3d60;
-  --sky500: #4baed4;
-  --aqua400: #43c2c8;
-  --gold500: #c99a4b;
-  --gold400: #ddb26f;
-  --wood500: #7c5a3d;
-  --sand100: #f6efe5;
-  --sunset300: #ef9f5b;
-  --white: #f8f7f3;
-  --surface: rgba(5, 23, 38, 0.88);
-  --surface-soft: rgba(13, 35, 56, 0.92);
-  --border: rgba(142, 171, 191, 0.12);
-  --shadow-soft: 0 28px 80px rgba(0, 10, 20, 0.2);
   --font-heading: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-family: var(--font-heading);
   font-size: 16px;
   line-height: 1.6;
-  background: radial-gradient(circle at top, rgba(67, 194, 200, 0.1), transparent 32%), linear-gradient(180deg, #031a2a 0%, #071f34 45%, #0c2238 100%);
+  background: radial-gradient(circle at top, rgba(107, 247, 255, 0.14), transparent 28%), linear-gradient(180deg, var(--palette-bg-start) 0%, #071f34 42%, var(--palette-bg-end) 100%);
 }
 
 * {
@@ -56,9 +44,32 @@ svg {
 }
 
 .page-shell {
+  position: relative;
+  z-index: 1;
   width: min(1200px, 100% - 32px);
   margin: 0 auto;
   padding: 32px 0 48px;
+}
+
+.page-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 84px, rgba(107, 247, 255, 0.08) 85px, rgba(107, 247, 255, 0.08) 86px),
+    repeating-linear-gradient(90deg, transparent, transparent 84px, rgba(255, 112, 224, 0.06) 85px, rgba(255, 112, 224, 0.06) 86px),
+    radial-gradient(circle at 20% 10%, rgba(107, 247, 255, 0.16), transparent 18%),
+    radial-gradient(circle at 80% 16%, rgba(255, 112, 224, 0.08), transparent 20%);
+  opacity: 0.28;
+  mix-blend-mode: screen;
+  animation: drift-grid 18s linear infinite;
+  z-index: 0;
+}
+
+@keyframes drift-grid {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-24px, 24px); }
 }
 
 .top-nav {
@@ -77,11 +88,11 @@ svg {
 
 .brand-mark {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 18px;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 221, 141, 0.28), transparent 42%), linear-gradient(180deg, var(--sky500), var(--navy700));
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  background: radial-gradient(circle at 20% 20%, rgba(107, 247, 255, 0.24), transparent 38%), linear-gradient(180deg, var(--palette-neon-cyan), var(--navy700));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), 0 0 28px rgba(107, 247, 255, 0.16);
   overflow: hidden;
 }
 
@@ -128,10 +139,10 @@ svg {
 
 .emblem-bird {
   position: absolute;
-  top: 18%;
+  top: 14%;
   left: 50%;
-  width: 140px;
-  height: 84px;
+  width: 180px;
+  height: 100px;
   transform: translate(-50%, -10%);
   z-index: 3;
 }
@@ -140,7 +151,7 @@ svg {
   width: 100%;
   height: 100%;
   display: block;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.94);
 }
 
 .emblem-bird svg path {
@@ -149,7 +160,7 @@ svg {
 
 
 .brand-copy span {
-  color: var(--gold500);
+  color: var(--palette-gold);
 }
 
 .nav-links {
@@ -159,8 +170,13 @@ svg {
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.95rem;
+  text-shadow: 0 0 10px rgba(107,247,255,0.12);
+}
+
+.nav-links a:hover {
+  color: var(--palette-neon-cyan);
 }
 
 .nav-actions {
@@ -192,7 +208,7 @@ svg {
 }
 
 .hero-copy .eyebrow {
-  color: var(--gold400);
+  color: var(--palette-gold);
   margin-bottom: 18px;
 }
 
@@ -201,6 +217,7 @@ svg {
   font-size: clamp(3rem, 5vw, 4.5rem);
   line-height: 0.98;
   letter-spacing: -0.05em;
+  text-shadow: 0 0 18px rgba(107, 247, 255, 0.32), 0 0 34px rgba(67, 174, 210, 0.18);
 }
 
 .hero-copy-text {
@@ -230,15 +247,17 @@ svg {
 }
 
 .button-primary {
-  background: var(--aqua400);
+  background: linear-gradient(135deg, var(--palette-neon-cyan), var(--palette-aqua));
   color: var(--navy900);
-  box-shadow: 0 20px 45px rgba(67,194,200,0.16);
+  box-shadow: 0 24px 80px rgba(107, 247, 255, 0.28);
+  border: 1px solid rgba(107, 247, 255, 0.24);
 }
 
 .button-secondary {
-  border: 1px solid rgba(255,255,255,0.16);
+  border: 1px solid rgba(107, 247, 255, 0.3);
   color: var(--white);
-  background: rgba(255,255,255,0.03);
+  background: rgba(67, 194, 200, 0.12);
+  box-shadow: 0 0 18px rgba(67, 194, 200, 0.1);
 }
 
 .button:hover {
@@ -260,7 +279,7 @@ svg {
 
 .section-label {
   margin: 0 0 14px;
-  color: var(--aqua400);
+  color: var(--palette-aqua);
 }
 
 .section-heading,
@@ -321,8 +340,8 @@ svg {
   padding: 28px;
   border-radius: 24px;
   background: rgba(11, 28, 47, 0.92);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(107,247,255,0.16);
+  box-shadow: 0 24px 80px rgba(107,247,255,0.08);
   overflow: hidden;
 }
 
@@ -334,7 +353,7 @@ svg {
   width: 52px;
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--aqua400), var(--gold400));
+  background: linear-gradient(90deg, var(--palette-aqua), var(--palette-gold));
   transform: translateY(-16px) translateX(16px);
 }
 
@@ -346,14 +365,15 @@ svg {
   justify-content: center;
   margin-bottom: 18px;
   border-radius: 16px;
-  background: rgba(67,194,200,0.12);
+  background: rgba(67,194,200,0.14);
+  box-shadow: inset 0 0 0 1px rgba(107,247,255,0.14), 0 0 18px rgba(107,247,255,0.08);
 }
 
 .feature-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--gold500);
+  background: var(--palette-gold);
 }
 
 .feature-title {
@@ -363,6 +383,10 @@ svg {
 
 .feature-copy {
   color: rgba(255,255,255,0.75);
+}
+
+.feature-link {
+  margin-top: 18px;
 }
 
 .split-narrative {
@@ -513,8 +537,8 @@ svg {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--aqua400), var(--gold400));
-  opacity: 0.2;
+  background: linear-gradient(90deg, var(--palette-neon-cyan), rgba(255,255,255,0.95));
+  opacity: 0.25;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.28s ease;
@@ -535,11 +559,11 @@ svg {
 
 .emblem-halo {
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 460px;
+  height: 460px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(67,194,200,0.25), rgba(255, 214, 122, 0.06) 36%, transparent 68%);
-  filter: blur(24px);
+  background: radial-gradient(circle at center, rgba(107,247,255,0.32), rgba(255, 214, 122, 0.08) 34%, transparent 70%);
+  filter: blur(28px);
   z-index: 0;
   animation: pulse-glow 6s ease-in-out infinite alternate;
 }
@@ -694,7 +718,7 @@ svg {
 }
 
 .fallback-main .eyebrow {
-  color: var(--gold400);
+  color: var(--palette-gold);
   margin-bottom: 18px;
 }
 

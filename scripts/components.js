@@ -32,14 +32,21 @@ const TopNav = () => {
   const brand = mk('div', 'brand');
   const mark = mk('div', 'brand-mark');
   const markBird = mk('div', 'brand-mark-bird');
+  markBird.innerHTML = `
+    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M8 26 C14 14 22 8 30 10 C34 6 42 8 44 18 C40 22 34 18 28 16 C24 18 20 22 16 26 C12 30 8 32 8 26 Z" fill="currentColor" />
+      <path d="M16 22 C22 18 26 14 32 16 C38 18 40 22 42 26 C36 24 30 24 24 28 C18 32 14 32 16 22 Z" fill="rgba(255,255,255,0.45)" />
+    </svg>
+  `;
   const name = mk('div', 'brand-copy');
   name.innerHTML = '<span>O</span>sprey';
   mark.append(markBird);
   brand.append(mark, name);
 
   const links = mk('nav', 'nav-links', '');
-  ['Product', 'Insights', 'Trust', 'Contact'].forEach(label => {
-    const link = mk('a', '', label, { href: `#${label.toLowerCase()}` });
+  ['Product', 'Downloads', 'Docs', 'Insights', 'Trust', 'Contact'].forEach(label => {
+    const href = label === 'Downloads' ? 'downloads.html' : label === 'Docs' ? 'docs.html' : `#${label.toLowerCase()}`;
+    const link = mk('a', '', label, { href });
     links.append(link);
   });
 
@@ -60,8 +67,9 @@ const MobileNavDrawer = () => {
   close.addEventListener('click', () => document.body.classList.remove('drawer-open'));
 
   const links = mk('nav', 'drawer-links');
-  ['Product', 'Insights', 'Trust', 'Contact'].forEach(label => {
-    const item = mk('a', '', label, { href: `#${label.toLowerCase()}` });
+  ['Product', 'Downloads', 'Docs', 'Insights', 'Trust', 'Contact'].forEach(label => {
+    const href = label === 'Downloads' ? 'downloads.html' : label === 'Docs' ? 'docs.html' : `#${label.toLowerCase()}`;
+    const item = mk('a', '', label, { href });
     links.append(item);
   });
 
@@ -126,7 +134,7 @@ const SectionIntro = ({ eyebrow, title, body }) => {
   return intro;
 };
 
-const FeatureCard = ({ title, description, accent = 'aqua' } = {}) => {
+const FeatureCard = ({ title, description, accent = 'aqua', href, linkLabel } = {}) => {
   const card = mk('article', `feature-card feature-card-${accent}`);
   const icon = mk('div', 'feature-icon');
   const dot = mk('span', 'feature-dot');
@@ -134,6 +142,18 @@ const FeatureCard = ({ title, description, accent = 'aqua' } = {}) => {
   const heading = mk('h3', 'feature-title', title);
   const body = mk('p', 'feature-copy', description);
   card.append(icon, heading, body);
+
+  if (href) {
+    const wrapper = mk('p', 'feature-link');
+    const link = mk('a', 'text-link', linkLabel || 'Learn more', { href });
+    if (href.startsWith('http')) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener');
+    }
+    wrapper.append(link);
+    card.append(wrapper);
+  }
+
   return card;
 };
 

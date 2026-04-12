@@ -29,6 +29,7 @@ const hero = SectionWrapper({ id: 'hero', classes: 'hero-section', children: [
     const actions = document.createElement('div');
     actions.className = 'hero-actions';
     actions.append(PrimaryButton({ label: 'Explore Kinjuu', href: '#product' }));
+    actions.append(SecondaryButton({ label: 'Downloads', href: 'downloads.html' }));
     actions.append(SecondaryButton({ label: 'Product tour', href: '#insights' }));
     left.append(actions);
     return left;
@@ -43,6 +44,25 @@ const page = PageShell([
   SectionWrapper({ id: 'partners', classes: 'logo-section', children: [
     SectionIntro({ eyebrow: 'Ecosystem home', title: 'A portfolio built for modern financial and creative systems.', body: 'eco is the shared operating environment for platforms developed by HBL Creative Studios and 20Amp Labs under Osprey Holding LLC.' }),
     LogoCloud({ names: ['Kinjuu', 'Niji', 'Agrilogik', 'eco', 'Osprey'] })
+  ]}),
+  SectionWrapper({ id: 'access', classes: 'feature-section', children: [
+    SectionIntro({ eyebrow: 'Public hub', title: 'eco-slate.org is the public home for repos, docs, and downloads.', body: 'The site supports open access to apps, components, documentation, and downloads managed by HBL Creative Studios. A companion GitHub repo mirrors the same ecosystem.' })
+  ]}),
+  SectionWrapper({ id: 'ecosystem', classes: 'feature-section', children: [
+    SectionIntro({ eyebrow: 'Ecosystem gateway', title: 'Access docs, downloads, and the public repo from one place.', body: 'This page and the linked downloads/docs pages are the launch points for the eco ecosystem. Use them to reach project resources, public assets, and community-facing documentation.' }),
+    FeatureGrid({ features: [
+      { title: 'Docs hub', description: 'Navigate component docs, onboarding guidance, and ecosystem reference material.', accent: 'aqua', href: 'docs.html', linkLabel: 'Open docs' },
+      { title: 'Downloads portal', description: 'Find release bundles, assets, and public downloads for Kinjuu, Niji, and Agrilogik.', accent: 'gold', href: 'downloads.html', linkLabel: 'Open downloads' },
+      { title: 'Repository access', description: 'Open the public repo to inspect source, follow updates, and contribute to the ecosystem.', accent: 'wood', href: 'https://github.com/jj-ervin/eco-slate-www', linkLabel: 'Open repo' }
+    ]})
+  ]}),
+  SectionWrapper({ id: 'downloads', classes: 'feature-section', children: [
+    SectionIntro({ eyebrow: 'Downloads', title: 'A clear path from public landing page to docs and assets.', body: 'The downloads section connects users directly to project repos, docs, and release bundles for Kinjuu, Niji, Agrilogik, and the larger eco platform.' }),
+    FeatureGrid({ features: [
+      { title: 'Project downloads', description: 'Direct access to assets and release bundles for core eco projects.', accent: 'aqua', href: 'downloads.html', linkLabel: 'Open downloads' },
+      { title: 'Documentation index', description: 'A centralized docs hub for onboarding, components, and ecosystem workflows.', accent: 'gold', href: 'docs.html', linkLabel: 'Open docs' },
+      { title: 'Repo portal', description: 'A public GitHub landing page for source, issues, and community contributions.', accent: 'wood', href: 'https://github.com/jj-ervin/eco-slate-www', linkLabel: 'Open repo' }
+    ]})
   ]}),
   SectionWrapper({ id: 'core', classes: 'feature-section', children: [
     SectionIntro({ eyebrow: 'Design system', title: 'Anchored components with premium coastal cues.', body: 'Cards, navigation, and hero elements share ringed frames, warm accents, and horizon-inspired spacing to support thoughtful financial workflows.' }),

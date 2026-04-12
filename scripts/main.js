@@ -22,14 +22,14 @@ const hero = SectionWrapper({ id: 'hero', classes: 'hero-section', children: [
     const left = document.createElement('div');
     left.className = 'hero-copy';
     left.innerHTML = `
-      <p class="eyebrow">Coastal fintech system</p>
-      <h1>Structure confidence with calm, ocean‑inspired financial intelligence.</h1>
-      <p class="hero-copy-text">OCRAFT shapes product trust with anchored systems, clear permissions, and attention to flow. It feels premium, navigable, and ready for modern finance teams.</p>
+      <p class="eyebrow">Osprey Holding</p>
+      <h1>eco is a cognitive operating environment for thoughtful product ecosystems.</h1>
+      <p class="hero-copy-text">Built by HBL Creative Studios and 20Amp Labs, eco lives under Osprey Holding LLC. It includes Kinjuu, Niji, Agrilogik, and future platforms designed to make financial systems more intuitive, flexible, and human-centered.</p>
     `;
     const actions = document.createElement('div');
     actions.className = 'hero-actions';
-    actions.append(PrimaryButton({ label: 'Get started', href: '#trial' }));
-    actions.append(SecondaryButton({ label: 'See how it works', href: '#insights' }));
+    actions.append(PrimaryButton({ label: 'Explore Kinjuu', href: '#product' }));
+    actions.append(SecondaryButton({ label: 'Product tour', href: '#insights' }));
     left.append(actions);
     return left;
   })(),
@@ -41,27 +41,32 @@ const page = PageShell([
   MobileNavDrawer(),
   hero,
   SectionWrapper({ id: 'partners', classes: 'logo-section', children: [
-    SectionIntro({ eyebrow: 'Trusted by modern teams', title: 'Built for products that need quiet confidence.', body: 'A visual system that balances premium structure with the calm energy of coastal design.' }),
-    LogoCloud({ names: ['Harbor', 'Atlas', 'Loom', 'Current', 'Breach'] })
+    SectionIntro({ eyebrow: 'Ecosystem home', title: 'A portfolio built for modern financial and creative systems.', body: 'eco is the shared operating environment for platforms developed by HBL Creative Studios and 20Amp Labs under Osprey Holding LLC.' }),
+    LogoCloud({ names: ['Kinjuu', 'Niji', 'Agrilogik', 'eco', 'Osprey'] })
   ]}),
   SectionWrapper({ id: 'core', classes: 'feature-section', children: [
-    SectionIntro({ eyebrow: 'Design system', title: 'A coherent set of components with premium nautical cues.', body: 'Cards, navigation, and hero elements share ringed frames, soft rails, and layered ocean gradients for a unified product experience.' }),
+    SectionIntro({ eyebrow: 'Design system', title: 'Anchored components with premium coastal cues.', body: 'Cards, navigation, and hero elements share ringed frames, warm accents, and horizon-inspired spacing to support thoughtful financial workflows.' }),
     FeatureGrid({ features: [
-      { title: 'Anchored structure', description: 'Vertical guides and polished sections keep every layout intentional and easy to scan.', accent: 'aqua' },
-      { title: 'Flowing motion', description: 'Subtle reveals and curved accents create a calm sense of momentum without distraction.', accent: 'gold' },
-      { title: 'Premium clarity', description: 'Generous spacing and refined typography make data feel trustworthy and approachable.', accent: 'wood' }
+      { title: 'Anchored structure', description: 'Typography, spacing, and card rhythm create a grounded interface for complex decisions.', accent: 'aqua' },
+      { title: 'Purposeful flow', description: 'Soft gradients and subtle motion help users move calmly through product journeys.', accent: 'gold' },
+      { title: 'Trust-forward clarity', description: 'High contrast, clean data surfaces, and clear labels make finance feel accessible and reliable.', accent: 'wood' }
     ]})
   ]}),
   SectionWrapper({ id: 'story', classes: 'split-section', children: [
-    SectionIntro({ eyebrow: 'Platform story', title: 'Built around structure, flow, and visible trust.', body: 'From product navigation to trust metrics, the UI system translates the emblem’s pilings, rope, and horizon into clear digital experiences.' }),
-    SplitNarrative({ left: { label: 'Insight system', title: 'Intentional signal production', body: 'Every detail is designed to help teams interpret product health and guardrails with confidence.' }, right: { label: 'Navigation system', title: 'Layered paths and calm hierarchy', body: 'Soft dividing rails, anchored columns, and ringed visuals support a modern coastal fintech narrative.' } })
+    SectionIntro({ eyebrow: 'Platform story', title: 'Confidence built on quiet, intentional detail.', body: 'The Osprey aesthetic translates to digital products as anchored structure, trust signal hierarchy, and approachable financial language.' }),
+    SplitNarrative({ left: { label: 'Kinjuu', title: 'Calm fintech orchestration', body: 'A product system that helps teams move with clarity, from onboarding to insights and execution.' }, right: { label: 'Osprey Holding', title: 'A brand rooted in place', body: 'The parent ecosystem is built around stewardship, stability, and a premium coastal mindset.' } })
   ]}),
   SectionWrapper({ id: 'metrics', classes: 'metrics-section', children: [
     MetricsBand({ stats: [
       { value: '32%', label: 'Faster adoption', detail: 'across internal teams' },
-      { value: '4.9', label: 'NPS signal', detail: 'from product stakeholders' },
-      { value: '6.7x', label: 'Confidence lift', detail: 'in launch decision making' }
+      { value: '4.9', label: 'Product sentiment', detail: 'from early users' },
+      { value: '6.7x', label: 'Decision confidence', detail: 'from new launch cohorts' }
     ]})
+  ]}),
+  SectionWrapper({ id: 'projects', classes: 'story-row', children: [
+    StoryCard({ title: 'Kinjuu', copy: 'A financial obligation tracker and reminder system built to keep payments, goals, and commitments clearly organized.', tag: 'Finance' }),
+    StoryCard({ title: 'Niji', copy: 'A color palette relationship map, name generator, and database that helps creative systems stay consistent and expressive.', tag: 'Design' }),
+    StoryCard({ title: 'Agrilogik', copy: 'A farming simulator-based research project using Farming Simulator 25 to model economics and teach financial systems through gameplay.', tag: 'Education' })
   ]}),
   SectionWrapper({ id: 'highlights', classes: 'story-row', children: [
     StoryCard({ title: 'Structured product onboarding', copy: 'Handcrafted interfaces guide teams through financial setup, reducing friction and preserving brand composure.', tag: 'Navigation' }),

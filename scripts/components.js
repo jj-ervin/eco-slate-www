@@ -32,7 +32,7 @@ const TopNav = () => {
   const brand = mk('div', 'brand');
   const mark = mk('div', 'brand-mark');
   const name = mk('div', 'brand-copy');
-  name.innerHTML = '<span>o</span>CRAFT';
+  name.innerHTML = '<span>O</span>sprey';
   brand.append(mark, name);
 
   const links = mk('nav', 'nav-links', '');
@@ -194,7 +194,7 @@ const CTASection = () => {
 const FooterBrand = () => {
   const footer = mk('footer', 'footer-brand');
   const left = mk('div', 'footer-copy');
-  left.innerHTML = '<strong>OCRAFT</strong> is designed for calm, confident financial teams.<br>Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY-4.0</a>.';
+  left.innerHTML = '<strong>Osprey Holding LLC</strong> sets the tone for Kinjuu and other coastal fintech experiences.<br>Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY-4.0</a>.';
   const right = mk('div', 'footer-links');
   right.innerHTML = '<a href="#product">Product</a><a href="#trust">Trust</a><a href="#contact">Contact</a>';
   footer.append(left, right);

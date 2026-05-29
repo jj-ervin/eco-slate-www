@@ -216,7 +216,7 @@ const CTASection = () => {
   section.append(mk('p', 'section-label', 'Public preview'));
   section.append(mk('h2', 'section-heading', 'Follow the live eco preview as the ecosystem grows.'));
   const actions = mk('div', 'cta-actions');
-  actions.append(PrimaryButton({ label: 'Open docs preview', href: 'docs.html' }), SecondaryButton({ label: 'Open downloads preview', href: 'downloads.html' }));
+  actions.append(PrimaryButton({ label: 'Open docs preview', href: '/docs' }), SecondaryButton({ label: 'Open downloads preview', href: '/downloads' }));
   section.append(actions);
   return section;
 };

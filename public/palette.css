@@ -1,0 +1,18 @@
+:root {
+  /* eco site palette matrix: update these values to restyle the site */
+  --palette-bg-start: #031a2a;
+  --palette-bg-end: #0c2238;
+  --palette-sky: #4baed4;
+  --palette-aqua: #43c2c8;
+  --palette-neon-cyan: #6bf7ff;
+  --palette-neon-magenta: #ff70e0;
+  --palette-gold: #ddb26f;
+  --palette-wood: #7c5a3d;
+  --palette-white: #f8f7f3;
+  --palette-surface: rgba(5, 23, 38, 0.88);
+  --palette-surface-soft: rgba(13, 35, 56, 0.92);
+  --palette-border: rgba(142, 171, 191, 0.12);
+  --palette-grid: rgba(107, 247, 255, 0.08);
+  --palette-grid-alt: rgba(255, 112, 224, 0.07);
+  --palette-shadow: 0 28px 80px rgba(0, 10, 20, 0.2);
+}

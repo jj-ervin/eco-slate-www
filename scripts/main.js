@@ -29,9 +29,9 @@ const hero = SectionWrapper({ id: 'hero', classes: 'hero-section', children: [
     const actions = document.createElement('div');
     actions.className = 'hero-actions';
     actions.append(PrimaryButton({ label: 'Explore Kinjuu', href: '#product' }));
-    actions.append(SecondaryButton({ label: 'Downloads', href: 'downloads.html' }));
+    actions.append(SecondaryButton({ label: 'Downloads', href: '/downloads' }));
+    actions.append(SecondaryButton({ label: 'Oil tracker', href: '/oil' }));
     actions.append(SecondaryButton({ label: 'Product tour', href: '#insights' }));
-    left.append(actions);
     return left;
   })(),
   HeroCenteredEmblem()
@@ -51,24 +51,24 @@ const page = PageShell([
   SectionWrapper({ id: 'wip', classes: 'feature-section', children: [
     SectionIntro({ eyebrow: 'Work in progress', title: 'The eco ecosystem is being built publicly.', body: 'This site is a public preview as the core projects and their documentation are created. Check back as new repos, docs, and downloads are published.' }),
     FeatureGrid({ features: [
-      { title: 'Platform preview', description: 'A live public landing page for the developing eco ecosystem.', accent: 'aqua', href: 'index.html', linkLabel: 'View preview' },
-      { title: 'Docs coming soon', description: 'Documentation is under active construction and will be published here first.', accent: 'gold', href: 'docs.html', linkLabel: 'Open docs preview' },
-      { title: 'Downloads arriving', description: 'Release assets and downloads are being prepared for public release.', accent: 'wood', href: 'downloads.html', linkLabel: 'Open downloads preview' }
+      { title: 'Platform preview', description: 'A live public landing page for the developing eco ecosystem.', accent: 'aqua', href: '/', linkLabel: 'View preview' },
+      { title: 'Docs coming soon', description: 'Documentation is under active construction and will be published here first.', accent: 'gold', href: '/docs', linkLabel: 'Open docs preview' },
+      { title: 'Downloads arriving', description: 'Release assets and downloads are being prepared for public release.', accent: 'wood', href: '/downloads', linkLabel: 'Open downloads preview' }
     ]})
   ]}),
   SectionWrapper({ id: 'ecosystem', classes: 'feature-section', children: [
     SectionIntro({ eyebrow: 'Ecosystem gateway', title: 'Access docs, downloads, and the public repo from one place.', body: 'This page and the linked downloads/docs pages are the public work-in-progress gateway for eco. They point to preview resources while the ecosystem is built and published.' }),
     FeatureGrid({ features: [
-      { title: 'Docs hub', description: 'Navigate component docs, onboarding guidance, and ecosystem reference material.', accent: 'aqua', href: 'docs.html', linkLabel: 'Open docs' },
-      { title: 'Downloads portal', description: 'Find release bundles, assets, and public downloads for Kinjuu, Niji, and Agrilogik.', accent: 'gold', href: 'downloads.html', linkLabel: 'Open downloads' },
+      { title: 'Docs hub', description: 'Navigate component docs, onboarding guidance, and ecosystem reference material.', accent: 'aqua', href: '/docs', linkLabel: 'Open docs' },
+      { title: 'Downloads portal', description: 'Find release bundles, assets, and public downloads for Kinjuu, Niji, and Agrilogik.', accent: 'gold', href: '/downloads', linkLabel: 'Open downloads' },
       { title: 'Repository access', description: 'Open the public repo to inspect source, follow updates, and contribute to the ecosystem.', accent: 'wood', href: 'https://github.com/jj-ervin/eco-slate-www', linkLabel: 'Open repo' }
     ]})
   ]}),
   SectionWrapper({ id: 'downloads', classes: 'feature-section', children: [
     SectionIntro({ eyebrow: 'Downloads', title: 'A clear path from public landing page to docs and assets.', body: 'The downloads section is a preview portal for project repos, early docs, and upcoming release bundles as the eco platform is built.' }),
     FeatureGrid({ features: [
-      { title: 'Project downloads', description: 'Direct access to assets and release bundles for core eco projects.', accent: 'aqua', href: 'downloads.html', linkLabel: 'Open downloads' },
-      { title: 'Documentation index', description: 'A centralized docs hub for onboarding, components, and ecosystem workflows.', accent: 'gold', href: 'docs.html', linkLabel: 'Open docs' },
+      { title: 'Project downloads', description: 'Direct access to assets and release bundles for core eco projects.', accent: 'aqua', href: '/downloads', linkLabel: 'Open downloads' },
+      { title: 'Documentation index', description: 'A centralized docs hub for onboarding, components, and ecosystem workflows.', accent: 'gold', href: '/docs', linkLabel: 'Open docs' },
       { title: 'Repo portal', description: 'A public GitHub landing page for source, issues, and community contributions.', accent: 'wood', href: 'https://github.com/jj-ervin/eco-slate-www', linkLabel: 'Open repo' }
     ]})
   ]}),

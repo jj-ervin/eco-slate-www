@@ -958,3 +958,311 @@ svg {
     padding: 24px;
   }
 }
+
+/* --- Oil Intelligence Dashboard --- */
+.market-section {
+  padding-bottom: 48px;
+}
+
+.market-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.price-card {
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(8, 22, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 48px rgba(0, 10, 20, 0.16);
+}
+
+.price-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.52);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 12px;
+}
+
+.price-value {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.price-change {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.price-up   { color: #5ef5a0; }
+.price-down { color: #ff6b6b; }
+
+.price-unit {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.price-card-risk .price-value {
+  color: #ff9f43;
+}
+
+/* Chokepoint grid */
+.choke-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.choke-card {
+  padding: 26px;
+  border-radius: 22px;
+  background: rgba(8, 22, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 3px solid var(--risk-color);
+  position: relative;
+}
+
+.choke-low      { --risk-color: #5ef5a0; }
+.choke-moderate { --risk-color: #ddb26f; }
+.choke-elevated { --risk-color: #ff9f43; }
+.choke-high     { --risk-color: #ff6b6b; }
+.choke-critical { --risk-color: #ff3333; }
+
+.choke-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--risk-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 14px;
+}
+
+.choke-status {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 8px;
+}
+
+.choke-note {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.52);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Intel layout */
+.intel-section {
+  padding-top: 0;
+}
+
+.intel-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.alert-feed {
+  background: rgba(8, 22, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.alert-feed-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.alert-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 16px 24px;
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.18s ease;
+}
+
+.alert-item:last-child {
+  border-bottom: none;
+}
+
+.alert-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.alert-severity-high     { border-left-color: #ff6b6b; }
+.alert-severity-moderate { border-left-color: #ff9f43; }
+.alert-severity-low      { border-left-color: rgba(255, 255, 255, 0.16); }
+
+.alert-headline {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 5px;
+  line-height: 1.4;
+}
+
+.alert-region {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.alert-age {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+  align-self: start;
+  padding-top: 3px;
+}
+
+/* Risk composite */
+.risk-composite {
+  background: rgba(8, 22, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 28px;
+}
+
+.risk-composite-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 16px;
+}
+
+.risk-score {
+  font-family: var(--font-mono);
+  font-size: 3.6rem;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  margin-bottom: 4px;
+  color: #ff9f43;
+}
+
+.risk-score-denom {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.risk-tier {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 159, 67, 0.10);
+  color: #ff9f43;
+  border: 1px solid rgba(255, 159, 67, 0.24);
+  margin: 12px 0 20px;
+}
+
+.risk-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.risk-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ddb26f, #ff9f43, #ff6b6b);
+  transition: width 0.6s ease;
+}
+
+.risk-drivers-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0 12px;
+}
+
+.risk-driver {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+}
+
+.risk-driver:last-of-type {
+  border-bottom: none;
+}
+
+.risk-driver-name {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.risk-driver-level {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.risk-driver-high     { color: #ff6b6b; }
+.risk-driver-elevated { color: #ff9f43; }
+.risk-driver-moderate { color: #ddb26f; }
+
+.intel-data-note {
+  font-size: 0.73rem;
+  color: rgba(255, 255, 255, 0.28);
+  margin: 20px 0 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .market-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .choke-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intel-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .market-band,
+  .choke-grid {
+    grid-template-columns: 1fr;
+  }
+}

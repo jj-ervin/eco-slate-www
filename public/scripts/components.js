@@ -254,6 +254,87 @@ const ModuleGrid = ({ modules = [] } = {}) => {
   return grid;
 };
 
+const PriceCard = ({ label, display, change, changePct, unit, accent = '' } = {}) => {
+  const positive = !String(change).startsWith('-');
+  const card = mk('div', `price-card${accent ? ` price-card-${accent}` : ''}`);
+  card.append(mk('p', 'price-label', label));
+  card.append(mk('div', 'price-value', display));
+  card.append(mk('div', `price-change ${positive ? 'price-up' : 'price-down'}`, `${change} (${changePct}%)`));
+  card.append(mk('p', 'price-unit', unit));
+  return card;
+};
+
+const MarketBand = ({ prices = [] } = {}) => {
+  const band = mk('div', 'market-band');
+  prices.forEach(p => band.append(PriceCard(p)));
+  return band;
+};
+
+const ChokeCard = ({ name, risk, status, note } = {}) => {
+  const card = mk('article', `choke-card choke-${risk}`);
+  card.append(mk('h3', 'choke-name', name));
+  card.append(mk('span', 'risk-badge', risk.charAt(0).toUpperCase() + risk.slice(1)));
+  card.append(mk('p', 'choke-status', status));
+  card.append(mk('p', 'choke-note', note));
+  return card;
+};
+
+const ChokeGrid = ({ chokepoints = [] } = {}) => {
+  const grid = mk('div', 'choke-grid');
+  chokepoints.forEach(cp => grid.append(ChokeCard(cp)));
+  return grid;
+};
+
+const AlertItem = ({ headline, region, age, severity = 'low' } = {}) => {
+  const item = mk('div', `alert-item alert-severity-${severity}`);
+  const left = mk('div', '');
+  left.append(mk('p', 'alert-headline', headline));
+  left.append(mk('span', 'alert-region', region));
+  item.append(left, mk('span', 'alert-age', age));
+  return item;
+};
+
+const AlertFeed = ({ alerts = [] } = {}) => {
+  const feed = mk('div', 'alert-feed');
+  feed.append(mk('div', 'alert-feed-header', 'Recent Signals'));
+  alerts.forEach(a => feed.append(AlertItem(a)));
+  return feed;
+};
+
+const RiskComposite = ({ score, tier, drivers = [] } = {}) => {
+  const card = mk('div', 'risk-composite');
+  card.append(mk('p', 'risk-composite-label', 'Risk Assessment'));
+
+  const scoreEl = mk('div', 'risk-score');
+  scoreEl.innerHTML = `${score}<span class="risk-score-denom"> / 10</span>`;
+  card.append(scoreEl);
+
+  card.append(mk('div', 'risk-tier', tier));
+
+  const bar = mk('div', 'risk-bar');
+  const fill = mk('div', 'risk-bar-fill');
+  fill.style.width = `${(score / 10) * 100}%`;
+  bar.append(fill);
+  card.append(bar);
+
+  card.append(mk('p', 'risk-drivers-label', 'Key Drivers'));
+  drivers.forEach(d => {
+    const row = mk('div', 'risk-driver');
+    row.append(mk('span', 'risk-driver-name', d.name));
+    row.append(mk('span', `risk-driver-level risk-driver-${d.level}`, d.level.charAt(0).toUpperCase() + d.level.slice(1)));
+    card.append(row);
+  });
+
+  card.append(mk('p', 'intel-data-note', 'Indicative data. Live feeds in development.'));
+  return card;
+};
+
+const IntelLayout = ({ main, aside } = {}) => {
+  const layout = mk('div', 'intel-layout');
+  layout.append(main, aside);
+  return layout;
+};
+
 const FooterBrand = () => {
   const footer = mk('footer', 'footer-brand');
   const left = mk('div', 'footer-copy');
@@ -282,6 +363,14 @@ export {
   LogoCloud,
   DashboardCard,
   ModuleGrid,
+  PriceCard,
+  MarketBand,
+  ChokeCard,
+  ChokeGrid,
+  AlertItem,
+  AlertFeed,
+  RiskComposite,
+  IntelLayout,
   CTASection,
   FooterBrand,
   PrimaryButton,

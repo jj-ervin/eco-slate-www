@@ -1,0 +1,42 @@
+---
+const title = "Oil Intelligence | eco Platform";
+const description = "Track oil market conditions, key chokepoints, and geopolitical events affecting global oil supply and shipping lanes.";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/styles.css" />
+		<link rel="icon" href="/favicon.ico" />
+	</head>
+	<body>
+		<div id="static-fallback" class="static-fallback">
+			<div class="fallback-page">
+				<header class="top-nav fallback-nav">
+					<div class="brand">
+						<div class="brand-mark">
+							<div class="brand-mark-bird"></div>
+						</div>
+						<div class="brand-copy"><span>O</span>sprey</div>
+					</div>
+					<div class="nav-actions fallback-actions">
+						<a class="button button-secondary" href="/dashboard">Dashboard</a>
+					</div>
+				</header>
+				<main class="fallback-main">
+					<p class="eyebrow">Oil Intelligence</p>
+					<h1>Oil Traffic &amp; Geopolitical Hotspots.</h1>
+					<p class="hero-copy-text">Track key oil chokepoints, Brent/WTI prices, and geopolitical events affecting global oil movement and shipping risk.</p>
+					<div class="hero-actions">
+						<a class="button button-secondary" href="/dashboard">← Dashboard</a>
+					</div>
+				</main>
+			</div>
+		</div>
+		<div id="app"></div>
+		<script type="module" src="/scripts/oil.js"></script>
+	</body>
+</html>

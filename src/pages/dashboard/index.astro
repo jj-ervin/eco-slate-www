@@ -1,0 +1,43 @@
+---
+const title = "Dashboard | eco Platform";
+const description = "Launch your eco operational workspace. Select from Oil Intelligence, Personal OS, Agrilogik, and Osprey Analytics.";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/styles.css" />
+		<link rel="icon" href="/favicon.ico" />
+	</head>
+	<body>
+		<div id="static-fallback" class="static-fallback">
+			<div class="fallback-page">
+				<header class="top-nav fallback-nav">
+					<div class="brand">
+						<div class="brand-mark">
+							<div class="brand-mark-bird"></div>
+						</div>
+						<div class="brand-copy"><span>O</span>sprey</div>
+					</div>
+					<div class="nav-actions fallback-actions">
+						<a class="button button-secondary" href="/">Home</a>
+					</div>
+				</header>
+				<main class="fallback-main">
+					<p class="eyebrow">eco Platform</p>
+					<h1>Operational workspace.</h1>
+					<p class="hero-copy-text">Select a module to launch your workspace. Each system is a bounded intelligence environment built for a specific domain.</p>
+					<div class="hero-actions">
+						<a class="button button-primary" href="/oil">Oil Intelligence</a>
+						<a class="button button-secondary" href="/downloads">Downloads</a>
+					</div>
+				</main>
+			</div>
+		</div>
+		<div id="app"></div>
+		<script type="module" src="/scripts/dashboard.js"></script>
+	</body>
+</html>

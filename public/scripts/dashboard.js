@@ -15,7 +15,7 @@ const modules = [
     tag: 'Markets',
     status: 'preview',
     accent: 'aqua',
-    href: '/oil'
+    href: '/dashboard/oil'
   },
   {
     title: 'Personal OS',

@@ -44,8 +44,8 @@ const TopNav = () => {
   brand.append(mark, name);
 
   const links = mk('nav', 'nav-links', '');
-  ['Product', 'Downloads', 'Oil', 'Docs', 'Insights', 'Trust', 'Contact'].forEach(label => {
-    const href = label === 'Downloads' ? '/downloads' : label === 'Docs' ? '/docs' : label === 'Oil' ? '/oil' : `#${label.toLowerCase()}`;
+  ['Product', 'Dashboard', 'Downloads', 'Docs', 'Insights', 'Contact'].forEach(label => {
+    const href = label === 'Downloads' ? '/downloads' : label === 'Docs' ? '/docs' : label === 'Dashboard' ? '/dashboard' : `#${label.toLowerCase()}`;
     const link = mk('a', '', label, { href });
     links.append(link);
   });
@@ -67,8 +67,8 @@ const MobileNavDrawer = () => {
   close.addEventListener('click', () => document.body.classList.remove('drawer-open'));
 
   const links = mk('nav', 'drawer-links');
-  ['Product', 'Downloads', 'Oil', 'Docs', 'Insights', 'Trust', 'Contact'].forEach(label => {
-    const href = label === 'Downloads' ? '/downloads' : label === 'Docs' ? '/docs' : label === 'Oil' ? '/oil' : `#${label.toLowerCase()}`;
+  ['Product', 'Dashboard', 'Downloads', 'Docs', 'Insights', 'Contact'].forEach(label => {
+    const href = label === 'Downloads' ? '/downloads' : label === 'Docs' ? '/docs' : label === 'Dashboard' ? '/dashboard' : `#${label.toLowerCase()}`;
     const item = mk('a', '', label, { href });
     links.append(item);
   });
@@ -221,6 +221,39 @@ const CTASection = () => {
   return section;
 };
 
+const PageHero = ({ eyebrow, title, body, children = [] } = {}) => {
+  const hero = mk('div', 'page-hero');
+  if (eyebrow) hero.append(mk('p', 'section-label', eyebrow));
+  const h1 = mk('h1', 'page-hero-title', title);
+  hero.append(h1);
+  if (body) hero.append(mk('p', 'section-copy', body));
+  children.forEach(child => hero.append(child));
+  return hero;
+};
+
+const DashboardCard = ({ title, description, tag, status = 'coming-soon', accent = 'aqua', href = '#' } = {}) => {
+  const card = mk('a', `dashboard-card dashboard-card-${accent}`, '', { href });
+
+  const header = mk('div', 'dashboard-card-header');
+  const tagEl = mk('span', 'dashboard-tag', tag);
+  const statusLabel = status === 'live' ? 'Live' : status === 'preview' ? 'Preview' : 'Coming Soon';
+  const statusEl = mk('span', `dashboard-status dashboard-status-${status}`, statusLabel);
+  header.append(tagEl, statusEl);
+
+  const titleEl = mk('h3', 'dashboard-card-title', title);
+  const body = mk('p', 'dashboard-card-copy', description);
+  const arrow = mk('span', 'dashboard-card-arrow', '→');
+
+  card.append(header, titleEl, body, arrow);
+  return card;
+};
+
+const ModuleGrid = ({ modules = [] } = {}) => {
+  const grid = mk('div', 'module-grid');
+  modules.forEach(mod => grid.append(DashboardCard(mod)));
+  return grid;
+};
+
 const FooterBrand = () => {
   const footer = mk('footer', 'footer-brand');
   const left = mk('div', 'footer-copy');
@@ -239,6 +272,7 @@ export {
   SectionWrapper,
   ContentContainer,
   SectionIntro,
+  PageHero,
   FeatureGrid,
   FeatureCard,
   StoryCard,
@@ -246,6 +280,8 @@ export {
   MetricsBand,
   SplitNarrative,
   LogoCloud,
+  DashboardCard,
+  ModuleGrid,
   CTASection,
   FooterBrand,
   PrimaryButton,

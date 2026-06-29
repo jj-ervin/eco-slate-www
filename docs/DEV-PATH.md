@@ -1,4 +1,4 @@
-# eco-slate-www Development Path
+# DEV-PATH — eco-slate-www
 
 This document provides the high-level migration path and strategic direction for eco-slate-www. For actionable tasks and milestones, see DEV_PLAN.md.
 

@@ -1,4 +1,4 @@
-# eco-slate-www Development Plan
+# DEV-PLAN — eco-slate-www
 
 This document provides actionable tasks and milestones for the current migration to a modern, scalable, and hybrid-ready site, following the high-level path in DEV_PATH.md.
 

@@ -1,5 +1,7 @@
 # DEV-PLAN — eco-slate-www
 
+> **SUPERSEDED** — this pre-migration planning doc is stale (last edited 2026-06-28) and describes the Astro migration as unstarted; it already shipped. The canonical, current DEV-PLAN.md is at the repo root (`eco-slate-www/DEV-PLAN.md`, AL:1, updated 2026-08-10). This file is kept for history only.
+
 This document provides actionable tasks and milestones for the current migration to a modern, scalable, and hybrid-ready site, following the high-level path in DEV_PATH.md.
 
 ## Milestones & Actionable Tasks

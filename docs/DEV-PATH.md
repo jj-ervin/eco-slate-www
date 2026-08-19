@@ -1,5 +1,7 @@
 # DEV-PATH — eco-slate-www
 
+> **SUPERSEDED** — this pre-migration doc is stale (last edited 2026-06-28). The canonical, current DEV-PATH.md is at the repo root (`eco-slate-www/DEV-PATH.md`, AL:1, updated 2026-08-10). This file is kept for history only.
+
 This document provides the high-level migration path and strategic direction for eco-slate-www. For actionable tasks and milestones, see DEV_PLAN.md.
 
 ## Migration Path Overview

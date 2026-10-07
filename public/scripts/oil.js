@@ -18,7 +18,7 @@ const page = PageShell([
     PageHero({
       eyebrow: 'Oil Intelligence',
       title: 'Market & Chokepoint Dashboard.',
-      body: 'Indicative benchmark prices, chokepoint risk assessments, and geopolitical intelligence signals.',
+      body: 'Sample data preview: prices, alert ages, chokepoint assessments and risk scores are fixed examples.',
       children: [backBtn]
     })
   ]}),
@@ -27,7 +27,7 @@ const page = PageShell([
     SectionIntro({
       eyebrow: 'Market data',
       title: 'Crude benchmark prices.',
-      body: 'Indicative reference prices. Live feed integration via EIA and FRED in active development.'
+      body: 'Fixed sample prices for this interface preview. Live feed integration is planned.'
     }),
     MarketBand({ prices: PRICES })
   ]}),
@@ -35,8 +35,8 @@ const page = PageShell([
   SectionWrapper({ id: 'chokepoints', classes: 'feature-section', children: [
     SectionIntro({
       eyebrow: 'Chokepoints',
-      title: 'Active risk monitoring.',
-      body: 'Current risk levels across six key global oil transit chokepoints based on available geopolitical intelligence.'
+      title: 'Chokepoint preview.',
+      body: 'Illustrative risk levels across six global oil transit chokepoints.'
     }),
     ChokeGrid({ chokepoints: CHOKEPOINTS })
   ]}),
@@ -45,7 +45,7 @@ const page = PageShell([
     SectionIntro({
       eyebrow: 'Intelligence feed',
       title: 'Geopolitical signals.',
-      body: 'Recent events and developments that may affect oil supply, shipping lanes, and market stability.'
+      body: 'Sample alert cards for previewing the interface.'
     }),
     IntelLayout({
       main: AlertFeed({ alerts: ALERTS }),

@@ -1,10 +1,12 @@
 ---
-title: "Osprey Holding | Kinjuu Financial Ecosystem"
-description: "Osprey Holding presents a coastal-inspired fintech homepage for Kinjuu, built around trust, calm structure, and modern financial navigation."
+const title = "Osprey Holding | Kinjuu Financial Ecosystem";
+const description = "Osprey Holding presents a coastal-inspired fintech homepage for Kinjuu, built around trust, calm structure, and modern financial navigation.";
 ---
 
 <html lang="en">
 	<head>
+		<title>{title}</title>
+		<meta name="description" content={description} />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="/styles.css" />
@@ -35,7 +37,7 @@ description: "Osprey Holding presents a coastal-inspired fintech homepage for Ki
 					<div class="hero-actions">
 						<a class="button button-primary" href="/downloads">Downloads</a>
 						<a class="button button-secondary" href="/oil">Oil tracker</a>
-						<a class="button button-secondary" href="#insights">Learn more</a>
+						<a class="button button-secondary" href="/docs">Learn more</a>
 					</div>
 				</main>
 			</div>

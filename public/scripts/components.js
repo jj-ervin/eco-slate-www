@@ -325,7 +325,7 @@ const RiskComposite = ({ score, tier, drivers = [] } = {}) => {
     card.append(row);
   });
 
-  card.append(mk('p', 'intel-data-note', 'Indicative data. Live feeds in development.'));
+  card.append(mk('p', 'intel-data-note', 'Fixed sample data. Live feeds are planned.'));
   return card;
 };
 

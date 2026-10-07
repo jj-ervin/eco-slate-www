@@ -1,3 +1,4 @@
+// Fixed interface examples; no live feed or observation timestamps.
 export const PRICES = [
   { label: 'Brent Crude',      display: '$82.40', change: '+0.28', changePct: '+0.34', unit: 'USD / bbl' },
   { label: 'WTI Crude',        display: '$78.20', change: '+0.22', changePct: '+0.28', unit: 'USD / bbl' },
